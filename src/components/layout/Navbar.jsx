@@ -25,7 +25,7 @@ export default function Navbar() {
       "
     >
       <nav className="flex items-center justify-between max-w-6xl mx-auto">
-        <Link to="/" className="flex items-center gap-3">
+        <Link to="/" className="flex items-center gap-3 shrink-0">
           <img
             src={logo}
             alt="Al Arobby Islamic Centre logo"
@@ -36,14 +36,14 @@ export default function Navbar() {
           </span>
         </Link>
 
-        {/* Desktop links */}
-        <ul className="hidden md:flex items-center gap-8">
+        {/* Desktop links — centered */}
+        <ul className="hidden md:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
           {navLinks.map((link) => (
             <li key={link.path}>
               <NavLink
                 to={link.path}
                 className={({ isActive }) =>
-                  `text-sm font-body transition-colors duration-200 ${
+                  `text-sm font-body transition-colors duration-300 ${
                     isActive
                       ? "text-emerald"
                       : "text-charcoal hover:text-emerald"
@@ -56,6 +56,19 @@ export default function Navbar() {
           ))}
         </ul>
 
+        {/* CTA button — desktop only */}
+        <Link
+          to="/foundation/charity"
+          className="
+            hidden md:inline-block
+            px-6 py-3
+            bg-forest text-sm font-body text-white
+            hover:bg-emerald transition-colors duration-300
+          "
+        >
+          Donate
+        </Link>
+
         {/* Mobile toggle */}
         <button
           type="button"
@@ -67,32 +80,56 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile menu */}
+      {/* Mobile full-screen menu */}
       <AnimatePresence>
         {isOpen && (
-          <motion.ul
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.25, ease: "easeOut" }}
-            className="md:hidden flex flex-col gap-4 mt-4 overflow-hidden"
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
+            className="
+              md:hidden fixed inset-0 top-0 z-40
+              bg-white
+              flex flex-col items-center justify-center gap-8
+            "
           >
+            <button
+              type="button"
+              onClick={() => setIsOpen(false)}
+              className="absolute top-6 right-6 text-forest"
+              aria-label="Close menu"
+            >
+              <X size={24} />
+            </button>
+
             {navLinks.map((link) => (
-              <li key={link.path}>
-                <NavLink
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className={({ isActive }) =>
-                    `block text-sm font-body ${
-                      isActive ? "text-emerald" : "text-charcoal"
-                    }`
-                  }
-                >
-                  {link.label}
-                </NavLink>
-              </li>
+              <NavLink
+                key={link.path}
+                to={link.path}
+                onClick={() => setIsOpen(false)}
+                className={({ isActive }) =>
+                  `text-lg font-body ${
+                    isActive ? "text-emerald" : "text-charcoal"
+                  }`
+                }
+              >
+                {link.label}
+              </NavLink>
             ))}
-          </motion.ul>
+
+            <Link
+              to="/foundation/charity"
+              onClick={() => setIsOpen(false)}
+              className="
+                mt-4 px-8 py-4
+                bg-forest text-sm font-body text-white
+                hover:bg-emerald transition-colors duration-300
+              "
+            >
+              Donate
+            </Link>
+          </motion.div>
         )}
       </AnimatePresence>
     </header>
