@@ -521,7 +521,7 @@ export default function Apply() {
 
             <div>
               <label className={labelClass}>
-                Your Photo (optional — used on your membership card)
+                Your Photo (Used on your membership card)
               </label>
               <label
                 className="
