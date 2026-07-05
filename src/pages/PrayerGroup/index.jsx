@@ -133,16 +133,30 @@ function Hero() {
           A faith-based gathering dedicated to spiritual growth, prayer, Islamic
           teachings, and community development.
         </p>
+
         <Link
-          to="/foundation"
+          to="/foundation/prayer-group/apply"
           className="
-            inline-block mt-6
-            text-sm font-body text-champagne
-            hover:text-gold transition-colors duration-300
+            inline-block mt-8 px-8 py-4
+            bg-white text-sm font-body text-forest
+            hover:bg-champagne transition-colors duration-300
           "
         >
-          ← Back to Foundation
+          Apply for Membership
         </Link>
+
+        <div>
+          <Link
+            to="/foundation"
+            className="
+              inline-block mt-6
+              text-sm font-body text-champagne
+              hover:text-gold transition-colors duration-300 font-bold md:font-normal
+            "
+          >
+            ← Back to Foundation
+          </Link>
+        </div>
       </div>
     </section>
   );

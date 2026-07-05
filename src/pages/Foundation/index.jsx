@@ -17,6 +17,7 @@ import family from "../../assets/family.jpg";
 import community from "../../assets/community.jpg";
 import social from "../../assets/social.jpg";
 import charity4 from "../../assets/charity4.jpg";
+import mosquePlan from "../../assets/al-arobby-mosque-plan.jpg";
 
 const coreValues = [
   { label: "Faith and Trust in Allah", icon: Compass },
@@ -32,7 +33,7 @@ const impacts = [
   {
     label: "Ongoing Mosque Development Project",
     desc: "An ongoing effort to build a permanent mosque serving as a centre for worship, Quranic education, and community gatherings.",
-    image: charity4,
+    image: mosquePlan,
   },
   {
     label: "Ramadan Feeding Programme",
@@ -108,6 +109,30 @@ function Hero() {
           Serving humanity through charity, compassion, and community support
           guided by the teachings of Islam.
         </p>
+
+        <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
+          <Link
+            to="/foundation/prayer-group/apply"
+            className="
+              inline-block px-8 py-4
+              bg-white text-sm font-body text-forest
+              hover:bg-champagne transition-colors duration-300
+            "
+          >
+            Apply for Membership
+          </Link>
+
+          <a
+            href="#donate"
+            className="
+              inline-block px-8 py-4
+              border border-champagne text-sm font-body text-white
+              hover:bg-white/10 transition-colors duration-300
+            "
+          >
+            Support Our Work
+          </a>
+        </div>
       </div>
     </section>
   );
@@ -497,7 +522,7 @@ function Donate() {
   const active = accounts[activeTab];
 
   return (
-    <section className="px-6 py-20 bg-neutral">
+    <section id="donate" className="px-6 py-20 bg-neutral">
       <div className="max-w-3xl mx-auto">
         <FadeIn>
           <h2 className="text-3xl font-display text-forest">

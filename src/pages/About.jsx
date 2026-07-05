@@ -55,7 +55,7 @@ const foundingRoles = [
     desc: "A dedicated institution focused on providing quality Qur’anic education, Islamic studies, character development, and moral training for students of all ages.",
   },
   {
-    role: "Founder and Prayer Therapist",
+    role: "Founder",
     org: "Al-Arobby Prayer Group",
     desc: "A faith-based platform established to encourage spiritual growth, collective remembrance of Allah, counseling, prayer therapy, and support for Muslims seeking guidance and inner peace.",
   },

@@ -37,22 +37,22 @@ export default function CourseDetail() {
       {/* Hero */}
       <section
         className="
-          flex flex-col items-start justify-center
-          h-[40vh] md:h-[50vh]
-          px-6 md:px-16
-          bg-forest
-        "
+    flex flex-col items-start justify-center
+    h-[40vh] md:h-[50vh]
+    px-6 md:px-16
+    bg-forest
+  "
       >
         <div className="max-w-3xl mx-auto md:mx-0">
           <Link
             to="/madrasah"
             className="
-              flex items-center gap-2
-              mb-6
-              text-sm font-body text-champagne
-              hover:text-gold
-              transition-colors duration-300
-            "
+        flex items-center gap-2
+        mb-6
+        text-sm font-body text-champagne
+        hover:text-gold
+        transition-colors duration-300
+      "
           >
             <ArrowLeft size={16} />
             Back to Madrasah
@@ -63,15 +63,24 @@ export default function CourseDetail() {
           <p className="mt-4 max-w-xl text-base md:text-lg font-body text-champagne font-semibold font-medium leading-relaxed">
             {course.overview}
           </p>
+
+          {/* Quick apply — visible immediately, no scrolling needed */}
+          <Link
+            to={`/madrasah/apply?course=${encodeURIComponent(course.title)}`}
+            className="
+        inline-block mt-8 px-8 py-4
+        bg-white text-sm font-body text-forest
+        hover:bg-champagne transition-colors duration-300
+      "
+          >
+            Apply / Enrol Now
+          </Link>
         </div>
       </section>
 
       {/* Course description */}
       <section className="px-6 py-20 max-w-4xl mx-auto">
         <FadeIn>
-          <p className="text-xs font-body tracking-widest uppercase text-emerald mb-3">
-            Course overview
-          </p>
           <h2 className="text-3xl font-display text-forest mb-6">
             About this course
           </h2>
@@ -93,26 +102,6 @@ export default function CourseDetail() {
             </div>
           </div>
         </FadeIn>
-      </section>
-
-      {/* Learning outcomes */}
-      <section className="px-6 py-20 max-w-6xl mx-auto">
-        <FadeIn>
-          <h2 className="text-3xl font-display text-forest">
-            Learning outcomes
-          </h2>
-        </FadeIn>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-          {course.outcomes.map((outcome, index) => (
-            <FadeIn key={outcome} delay={0.1 * index}>
-              <div className="flex items-start gap-3 p-6 border border-stroke">
-                <CheckCircle2 size={22} className="text-emerald shrink-0" />
-                <p className="text-sm font-body text-charcoal">{outcome}</p>
-              </div>
-            </FadeIn>
-          ))}
-        </div>
       </section>
 
       {/* Shared course info */}

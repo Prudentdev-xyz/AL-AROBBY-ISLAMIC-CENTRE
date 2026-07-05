@@ -8,6 +8,7 @@ import {
   Heart,
   GraduationCap,
   Globe,
+  ArrowRight,
 } from "lucide-react";
 import heroOne from "../assets/centre.jpg";
 import heroTwo from "../assets/charity.jpg";
@@ -242,9 +243,6 @@ function CoreValues() {
   return (
     <section className="bg-forest px-6 py-20">
       <div className="max-w-6xl mx-auto">
-        <p className="text-xs font-body tracking-widest uppercase text-gold mb-2">
-          What guides us
-        </p>
         <h2 className="text-3xl font-display text-white mb-3">
           Our core values
         </h2>
@@ -278,9 +276,6 @@ function WhoWeServe() {
     <section className="px-6 py-20 max-w-6xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         <div>
-          <p className="text-xs font-body tracking-widest uppercase text-emerald mb-2">
-            Open to everyone
-          </p>
           <h2 className="text-3xl font-display text-forest mb-4">
             Who we serve
           </h2>
@@ -317,30 +312,46 @@ function WhoWeServe() {
               value: "Quran & Islamic Studies",
               sub: "Tajweed · Hifz · Aqeedah · Fiqh · Seerah",
               color: "border-l-emerald",
+              link: "/madrasah",
             },
             {
               label: "Prayer Group",
               value: "Daily · Friday · Monthly",
               sub: "6:30am daily · 9am Fridays · Instagram & TikTok Live",
               color: "border-l-gold",
+              link: "/foundation/prayer-group",
             },
             {
               label: "Foundation",
               value: "Charity & Humanitarian",
               sub: "Ramadan feeding · Mosque project · Community relief",
               color: "border-l-forest",
+              link: "/foundation/charity",
             },
-          ].map(({ label, value, sub, color }) => (
-            <div
+          ].map(({ label, value, sub, color, link }) => (
+            <Link
               key={label}
-              className={`p-5 border border-stroke border-l-4 ${color}`}
+              to={link}
+              className={`
+                group p-5 border border-stroke border-l-4 ${color}
+                hover:bg-charcoal/[0.02] transition-colors duration-300
+                flex items-center justify-between
+              `}
             >
-              <p className="text-xs font-body uppercase tracking-widest text-charcoal/50 mb-1">
-                {label}
-              </p>
-              <p className="text-base font-display text-forest mb-1">{value}</p>
-              <p className="text-xs font-body text-charcoal/60">{sub}</p>
-            </div>
+              <div>
+                <p className="text-xs font-body uppercase tracking-widest text-charcoal/50 mb-1">
+                  {label}
+                </p>
+                <p className="text-base font-display text-forest mb-1">
+                  {value}
+                </p>
+                <p className="text-xs font-body text-charcoal/60">{sub}</p>
+              </div>
+              <ArrowRight
+                size={18}
+                className="text-charcoal/30 group-hover:text-emerald group-hover:translate-x-1 transition-all duration-300 shrink-0"
+              />
+            </Link>
           ))}
         </div>
       </div>
@@ -352,8 +363,8 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <CoreValues />
       <WhoWeServe />
+      <CoreValues />
       <About />
     </>
   );

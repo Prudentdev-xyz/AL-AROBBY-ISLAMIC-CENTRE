@@ -131,7 +131,7 @@ export default function Apply() {
           </p>
 
           <a
-            href={`https://wa.me/2348168919665?text=${encodeURIComponent(
+            href={`https://wa.me/2349026128141?text=${encodeURIComponent(
               `Assalamu Alaikum, I just applied for ${form.course} at Al Arobby Academy. My name is ${form.full_name}. I'll send payment proof here.`,
             )}`}
             target="_blank"

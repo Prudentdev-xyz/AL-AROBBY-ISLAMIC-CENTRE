@@ -13,10 +13,12 @@ import MadrasahApplications from "./admin/MadrasahApplications";
 import PrayerGroupApplications from "./admin/PrayerGroupApplications";
 import MadrasahApply from "./pages/Madrasah/Apply";
 import PrayerGroupApply from "./pages/PrayerGroup/Apply";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <div className="flex flex-col min-h-screen">
+      <ScrollToTop />
       <Navbar />
 
       <main className="flex-1">

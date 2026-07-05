@@ -26,3 +26,7 @@ h1, h2, h3, h4 {
 button {
   @apply cursor-pointer;
 }
+
+html {
+  scroll-behavior: smooth;
+}

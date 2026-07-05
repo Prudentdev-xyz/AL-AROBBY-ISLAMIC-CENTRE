@@ -85,7 +85,7 @@ export default async function handler(req, res) {
 
         <div style="text-align: center; margin: 28px 0;">
           
-            href="https://wa.me/2348168919665?text=${encodeURIComponent(
+            href="https://wa.me/2349026128141?text=${encodeURIComponent(
               `Assalamu Alaikum, I've made payment for ${course} at Al Arobby Academy. My name is ${full_name}. Here's my proof of payment.`
             )}"
             style="background-color: #1b3a2f; color: #f5e6c8; padding: 14px 28px; text-decoration: none; font-size: 14px; display: inline-block;"

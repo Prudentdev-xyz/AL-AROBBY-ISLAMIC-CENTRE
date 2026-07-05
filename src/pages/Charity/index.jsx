@@ -118,16 +118,30 @@ function Hero() {
           Serving humanity through compassion, charitable giving, and community
           development, inspired by the teachings of Islam.
         </p>
-        <Link
-          to="/foundation"
+
+        
+         <a href="#donate"
           className="
-            inline-block mt-6
-            text-sm font-body text-champagne
-            hover:text-gold transition-colors duration-300
+            inline-block mt-8 px-8 py-4
+            bg-white text-sm font-body text-forest
+            hover:bg-champagne transition-colors duration-300
           "
         >
-          ← Back to Foundation
-        </Link>
+          Support Our Work
+        </a>
+
+        <div>
+          <Link
+            to="/foundation"
+            className="
+              inline-block mt-6
+              text-sm font-body text-champagne
+              hover:text-gold transition-colors duration-300
+            "
+          >
+            ← Back to Foundation
+          </Link>
+        </div>
       </div>
     </section>
   );
@@ -520,7 +534,7 @@ function Donate() {
   const active = accounts[activeTab];
 
   return (
-    <section className="px-6 py-20 bg-neutral">
+    <section id="donate" className="px-6 py-20 bg-neutral">
       <div className="max-w-3xl mx-auto">
         <FadeIn>
           <h2 className="text-3xl font-display text-forest">
@@ -580,8 +594,8 @@ function Donate() {
                 </p>
 
                 <div className="flex flex-col gap-3">
-                  <a
-                    href="https://wa.me/2348168919665"
+                  
+                   <a href="https://wa.me/2348168919665"
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center gap-3 text-sm font-body text-charcoal hover:text-emerald transition-colors duration-300"
@@ -592,8 +606,8 @@ function Donate() {
                     </span>
                   </a>
 
-                  <a
-                    href="mailto:adeshinamuhammad001@gmail.com"
+                  
+                   <a href="mailto:adeshinamuhammad001@gmail.com"
                     className="flex items-center gap-3 text-sm font-body text-charcoal hover:text-emerald transition-colors duration-300"
                   >
                     <Mail size={16} className="text-emerald flex-shrink-0" />

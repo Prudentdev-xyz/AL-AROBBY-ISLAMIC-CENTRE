@@ -138,10 +138,10 @@ function MembershipCard({ member, membershipId, joinDate }) {
       ctx.textAlign = "center";
       ctx.fillStyle = BRAND.white;
       ctx.font = "600 30px 'Fraunces', serif";
-      ctx.fillText("AL AROBBY", cx, 175);
+      ctx.fillText("AL AROBBY ISLAMIC PRAYER GROUP", cx, 175);
       ctx.fillStyle = BRAND.champagne;
       ctx.font = "500 15px 'Plus Jakarta Sans', sans-serif";
-      ctx.fillText("PRAYER GROUP · ASALATU", cx, 200);
+      ctx.fillText("(THE PRAYER THERAPIST)", cx, 200);
 
       // 5. Photo circle, straddling the charcoal/white boundary —
       // pushed down slightly so it no longer overlaps the header text
