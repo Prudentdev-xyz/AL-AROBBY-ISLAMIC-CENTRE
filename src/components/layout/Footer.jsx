@@ -108,6 +108,15 @@ export default function Footer() {
               </a>
             </li>
             <li className="flex items-center gap-2">
+              <Mail size={16} className="text-gold" />
+              <a
+                href="mailto:alarobbyislamicacademy@gmail.com"
+                className="text-sm font-body text-champagne hover:text-gold"
+              >
+                adeshinamuhammad001@gmail.com
+              </a>
+            </li>
+            <li className="flex items-center gap-2">
               <Phone size={16} className="text-gold" />
 
               <a
