@@ -15,6 +15,7 @@ import heroTwo from "../assets/charity.jpg";
 import heroThree from "../assets/Madrasah.jpg";
 import madrasahThumb from "../assets/Madrasah-logo.jpeg";
 import foundationThumb from "../assets/charity-logo.jpeg";
+import prayerGroupThumb from "../assets/prayer-group-logo.jpg";
 
 const slides = [
   {
@@ -196,7 +197,7 @@ function About() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
         <Link
           to="/madrasah"
           className="group flex flex-col gap-4 p-8 border border-stroke hover:border-emerald transition-colors duration-300"
@@ -217,6 +218,27 @@ function About() {
         </Link>
 
         <Link
+          to="/foundation/prayer-group"
+          className="group flex flex-col gap-4 p-8 border border-stroke hover:border-emerald transition-colors duration-300"
+        >
+          <img
+            src={prayerGroupThumb}
+            alt="Prayer Group"
+            className="w-15 h-15 object-contain rounded-full"
+          />
+          <h3 className="text-xl font-display text-forest">
+            Prayer Group
+          </h3>
+          <p className="text-sm font-body text-charcoal">
+            A faith-based gathering for spiritual growth, prayer, and Islamic
+            teachings, live daily on Instagram and TikTok.
+          </p>
+          <span className="text-sm font-body text-emerald group-hover:text-gold transition-colors duration-300">
+            Join Prayer Group →
+          </span>
+        </Link>
+
+        <Link
           to="/foundation"
           className="group flex flex-col gap-4 p-8 border border-stroke hover:border-gold transition-colors duration-300"
         >
@@ -227,8 +249,8 @@ function About() {
           />
           <h3 className="text-xl font-display text-forest">Foundation</h3>
           <p className="text-sm font-body text-charcoal">
-            Prayer Group (Asalatu) and Charity & Humanitarian Services, serving
-            the community through faith and compassion.
+            Prayer Group and Charity & Humanitarian Services, serving the
+            community through faith and compassion.
           </p>
           <span className="text-sm font-body text-gold group-hover:text-emerald transition-colors duration-300">
             Explore Foundation →

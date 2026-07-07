@@ -127,7 +127,7 @@ function Hero() {
           Al Arobby Foundation
         </p>
         <h1 className="text-4xl md:text-6xl font-display text-white font-bold md:font-semibold leading-tight">
-          Prayer Group (Asalatu)
+           Prayer group (the prayer therapist)
         </h1>
         <p className="mt-4 max-w-xl text-base md:text-lg font-body text-champagne font-semibold md:font-medium leading-relaxed">
           A faith-based gathering dedicated to spiritual growth, prayer, Islamic
