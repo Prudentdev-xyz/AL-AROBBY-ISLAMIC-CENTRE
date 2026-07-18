@@ -41,6 +41,57 @@ const BRAND = {
   white: "#FFFFFF",
 };
 
+const communityPlatforms = [
+  {
+    name: "WhatsApp Group",
+    handle: "Join the community chat",
+    href: "https://chat.whatsapp.com/GY9KKod79Ih8zaSwfPDf16?s=sw&p=i&ilr=0&amv=1",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        className="w-5 h-5"
+      >
+        <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.81-.11-.42-.13-.95-.31-1.64-.6-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.17-1.56-1.17-2.97 0-1.41.74-2.1 1-2.39.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.58.81 2 .88 2.15.07.15.12.33.02.53-.1.19-.15.31-.29.48-.14.17-.3.38-.43.51-.14.14-.29.29-.12.57.17.29.75 1.24 1.62 2.01 1.11.99 2.05 1.3 2.34 1.44.29.15.46.13.63-.08.17-.2.72-.84.91-1.13.19-.29.38-.24.64-.14.26.1 1.65.78 1.94.92.29.14.48.21.55.33.07.12.07.68-.17 1.36z" />
+      </svg>
+    ),
+  },
+  {
+    name: "Instagram",
+    handle: "@al_arobby",
+    href: "https://www.instagram.com/al_arobby?igsh=eTNudTZ4MG9tcGpv",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        className="w-5 h-5"
+      >
+        <rect x="2" y="2" width="20" height="20" rx="5" />
+        <circle cx="12" cy="12" r="4" />
+        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
+      </svg>
+    ),
+  },
+  {
+    name: "TikTok",
+    handle: "@prayer_therapist",
+    href: "https://www.tiktok.com/@prayer_therapist?_r=1&_t=ZS-97RzgGoY43w",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        className="w-5 h-5"
+      >
+        <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+      </svg>
+    ),
+  },
+];
+
 // Derives a real, permanent, unique Membership ID from the database
 // row's own UUID — not a random guess, tied to the actual saved record.
 function deriveMembershipId(rowId) {
@@ -305,6 +356,49 @@ function MembershipCard({ member, membershipId, joinDate }) {
         <Download size={18} />
         Download Membership Card
       </button>
+
+      <div className="w-full max-w-sm mt-4 p-6 border border-gold bg-neutral">
+        <h2 className="text-lg font-display text-forest mb-2 text-center">
+          Join Our Prayer Group Community
+        </h2>
+        <p className="text-xs font-body text-charcoal leading-relaxed mb-5 text-center">
+          Follow us on Instagram and TikTok for daily and Friday Asalatu
+          sessions, and join our WhatsApp group to stay connected.
+        </p>
+
+        <div className="flex flex-col gap-3">
+          {communityPlatforms.map((platform) => (
+            
+             <a key={platform.name}
+              href={platform.href}
+              target="_blank"
+              rel="noreferrer"
+              className="
+                group flex items-center gap-4
+                p-3
+                bg-white border border-stroke
+                hover:border-gold
+                transition-colors duration-300
+              "
+            >
+              <span className="text-forest group-hover:text-gold transition-colors duration-300">
+                {platform.icon}
+              </span>
+              <div className="flex-1">
+                <p className="text-sm font-display text-forest">
+                  {platform.name}
+                </p>
+                <p className="text-xs font-body text-charcoal/60">
+                  {platform.handle}
+                </p>
+              </div>
+              <span className="text-xs font-body text-gold group-hover:text-emerald transition-colors duration-300">
+                {platform.name === "WhatsApp Group" ? "Join →" : "Follow →"}
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
